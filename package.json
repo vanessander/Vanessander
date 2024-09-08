@@ -1,15 +1,13 @@
 {
   "name": "simplefolio",
-  "homepage": "https://vanessander.github.io/",
   "version": "1.0.1",
   "private": "true",
   "description": "A clean, beautiful and responsive portfolio template for Developers!",
   "source": "src/index.html",
   "scripts": {
     "start": "PARCEL_WORKERS=0 parcel",
-    "build": "PARCEL_WORKERS=0 parcel build",
-    "gh-pages-build": "PARCEL_WORKERS=0 parcel build --public-url .",
-    "deploy": "gh-pages -d dist -f"
+    "build": "PARCEL_WORKERS=0 parcel build src/index.html",
+    "gh-pages-build": "PARCEL_WORKERS=0 parcel build --public-url ."
   },
   "repository": {
     "type": "git",
@@ -21,9 +19,9 @@
   "bugs": {
     "url": "https://github.com/cobidev/simplefolio/issues"
   },
+  "homepage": "https://github.com/cobidev/simplefolio#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.12.0",
-    "gh-pages": "^6.1.1",
     "parcel": "^2.12.0",
     "prettier": "^2.7.1"
   },

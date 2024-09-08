@@ -1,8 +1,7 @@
-<!-- <html> 
+<html> 
 <head> 
 <title>Vanessander</title> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
 <style type="text/css"> 
 	body {
 		background-color:#000
@@ -82,7 +81,7 @@
 	accessCountimer:null,
 	index:0, // current cursor position
 	speed:2, // speed of the Typer
-	file:"Vanessander.txt", //file, must be setted
+	file:"", //file, must be setted
 	accessCount:0, //times alt is pressed for Access Granted
 	deniedCount:0, //times caps is pressed for Access Denied
 	init: function(){// inizialize Hacker Typer
@@ -182,7 +181,7 @@ function replaceUrls(text) {
 }
 }
 Typer.speed=3;
-Typer.file="Vanessander.txt";
+Typer.file="vanessander.txt";
 Typer.init();
  
 var timer = setInterval("t();", 40);
@@ -209,209 +208,4 @@ function t() {
 
 </script>
 </body> 
-</html> -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Vanessander</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style type="text/css">
-        body {
-            background-color: #000;
-        }
-        #console {
-            font-family: courier, monospace;
-            color: #fff;
-            width: auto;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: auto;
-            font-size: 14px;
-        }
-        a {
-            color: #0bc;
-            text-decoration: none;
-        }
-        #a {
-            color: #0f0;
-        }
-        #c {
-            color: #0bc;
-        }
-        #b {
-            color: #ff0096;
-        }
-        .button-14 {
-            background-image: linear-gradient(#f7f8fa, #e7e9ec);
-            border-color: #adb1b8 #a2a6ac #8d9096;
-            border-style: solid;
-            border-width: 1px;
-            border-radius: 3px;
-            box-shadow: rgba(255, 255, 255, .6) 0 1px 0 inset;
-            box-sizing: border-box;
-            color: #0f1111;
-            cursor: pointer;
-            display: inline-block;
-            font-family: "Amazon Ember", Arial, sans-serif;
-            font-size: 14px;
-            height: 29px;
-            font-size: 13px;
-            outline: 0;
-            overflow: hidden;
-            padding: 0 11px;
-            text-align: center;
-            text-decoration: none;
-            text-overflow: ellipsis;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            white-space: nowrap;
-        }
-        .button-14:active {
-            border-bottom-color: #a2a6ac;
-        }
-        .button-14:active:hover {
-            border-bottom-color: #a2a6ac;
-        }
-        .button-14:hover {
-            border-color: #a2a6ac #979aa1 #82858a;
-        }
-        .button-14:focus {
-            border-color: #e77600;
-            box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;
-            outline: 0;
-        }
-    </style>
-</head>
-<body>
-    <script type="text/javascript">
-        var Typer = {
-            text: null,
-            accessCountimer: null,
-            index: 0,
-            speed: 2,
-            file: "Vanessander.txt",
-            accessCount: 0,
-            deniedCount: 0,
-            init: function() {
-                accessCountimer = setInterval(function() { Typer.updLstChr(); }, 500);
-                $.get(Typer.file)
-                    .done(function(data) {
-                        Typer.text = data;
-                        Typer.text = Typer.text.slice(0, Typer.text.length - 1);
-                    })
-                    .fail(function(jqXHR, textStatus, errorThrown) {
-                        console.error("Failed to load file:", textStatus, errorThrown);
-                    });
-            },
-            content: function() {
-                return $("#console").html();
-            },
-            write: function(str) {
-                $("#console").append(str);
-                return false;
-            },
-            makeAccess: function() {
-                Typer.hidepop();
-                Typer.accessCount = 0;
-                var ddiv = $("<div id='gran'>").html("");
-                ddiv.addClass("accessGranted");
-                ddiv.html("<h1>ACCESS GRANTED</h1>");
-                $(document.body).prepend(ddiv);
-                return false;
-            },
-            makeDenied: function() {
-                Typer.hidepop();
-                Typer.deniedCount = 0;
-                var ddiv = $("<div id='deni'>").html("");
-                ddiv.addClass("accessDenied");
-                ddiv.html("<h1>ACCESS DENIED</h1>");
-                $(document.body).prepend(ddiv);
-                return false;
-            },
-            hidepop: function() {
-                $("#deni").remove();
-                $("#gran").remove();
-            },
-            addText: function(key) {
-                if (key.keyCode == 18) {
-                    Typer.accessCount++;
-                    if (Typer.accessCount >= 3) {
-                        Typer.makeAccess();
-                    }
-                } else if (key.keyCode == 20) {
-                    Typer.deniedCount++;
-                    if (Typer.deniedCount >= 3) {
-                        Typer.makeDenied();
-                    }
-                } else if (key.keyCode == 27) {
-                    Typer.hidepop();
-                } else if (Typer.text) {
-                    var cont = Typer.content();
-                    if (cont.substring(cont.length - 1, cont.length) == "|") {
-                        $("#console").html($("#console").html().substring(0, cont.length - 1));
-                    }
-                    if (key.keyCode != 8) {
-                        Typer.index += Typer.speed;
-                    } else {
-                        if (Typer.index > 0) {
-                            Typer.index -= Typer.speed;
-                        }
-                    }
-                    var text = Typer.text.substring(0, Typer.index);
-                    var rtn = new RegExp("\n", "g");
-                    $("#console").html(text.replace(rtn, "<br/>"));
-                    window.scrollBy(0, 50);
-                }
-                if (key.preventDefault && key.keyCode != 122) {
-                    key.preventDefault();
-                }
-                if (key.keyCode != 122) {
-                    key.returnValue = false;
-                }
-            },
-            updLstChr: function() {
-                var cont = this.content();
-                if (cont.substring(cont.length - 1, cont.length) == "|") {
-                    $("#console").html($("#console").html().substring(0, cont.length - 1));
-                } else {
-                    this.write("|");
-                }
-            }
-        };
-
-        function replaceUrls(text) {
-            var http = text.indexOf("http://");
-            var space = text.indexOf(".me ", http);
-            if (space != -1) {
-                var url = text.slice(http, space - 1);
-                return text.replace(url, "<a href=\"" + url + "\">" + url + "</a>");
-            } else {
-                return text;
-            }
-        }
-
-        Typer.speed = 3;
-        Typer.init();
-
-        var timer = setInterval(function() {
-            Typer.addText({ "keyCode": 123748 });
-            if (Typer.index > Typer.text.length) {
-                clearInterval(timer);
-            }
-        }, 40);
-    </script>
-    <div id="console"></div>
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-610661-7']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-</body>
 </html>
