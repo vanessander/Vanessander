@@ -7,7 +7,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "PARCEL_WORKERS=0 parcel",
-    "build": "PARCEL_WORKERS=0 parcel build src/index.html",
+    "build": "PARCEL_WORKERS=0 parcel build",
     "gh-pages-build": "PARCEL_WORKERS=0 parcel build --public-url .",
     "deploy": "gh-pages -d dist -f"
   },
