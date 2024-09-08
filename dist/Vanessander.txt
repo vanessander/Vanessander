@@ -1,0 +1,19 @@
+<h3><span id="a">Vanessander@DMM</span>:<span id="b">~</span><span id="c">$</span> cat vanessander.txt </h3>
+<h2>Welcome, It's Vanessander here.<!-- laglaglaglaglaglaglaglaglaglaglaglag -->
+<p> Leader, entrepreneur, Dreamer, Doer.<br><br> Dive in, but don’t blame me if you lose track of time
+The rabbit hole awaits… :) :P <!-- slightdelayhere--><!-- longlongcomment --></p></h2>
+
+<h3><span id="a">Vanessander@DMM</span>:<span id="b">~</span><span id="c">$</span> Contact Me </h3><!-- slightdelayhere--><!-- longlongcomment --> 
+<h2>Email addresses : <a href="mailto:alcatrazexprss@gmail.com">alcatrazexprss@gmail.com</a>
+
+Phone Number : <a href = "tel: +258846830255"> +258-846830255 </a>
+
+Github : <a href = "https://github.com/vanessander"> github.com/vanessander</a> <br/> </h2>
+
+<h3><span id="a">Vanessander@DMM</span>:<span id="b">~</span><span id="c">$</span> Fun Fact about me </h3>
+<h1> Email me to get to know that! (: :P </h1>
+
+<h3><span id="a">Vanessander@DMM</span>:<span id="b">~</span><span id="c">$</span> Quote of the Day </h3>
+<h1>"Everyone is a loser till they decide to do something about it!" </h1>
+<p>Scroll down to scratch the surface of this universe boy.</p>
+<a href="index2.html" target="_self"><button class="button-14" role="button">Know more</button></a>
