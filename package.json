@@ -1,37 +1,24 @@
 {
-  "name": "simplefolio",
-  "version": "1.0.1",
-  "private": "true",
-  "description": "A clean, beautiful and responsive portfolio template for Developers!",
-  "source": "src/index.html",
+  "name": "portfolio-nextjs-tailwindcss",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "PARCEL_WORKERS=0 parcel",
-    "build": "parcel build src/index.html --dist-dir ./dist",
-    "gh-pages-build": "PARCEL_WORKERS=0 parcel build --public-url ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cobidev/simplefolio"
-  },
-  "keywords": [],
-  "author": "Jacobo Martinez",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cobidev/simplefolio/issues"
-  },
-  "homepage": "https://github.com/cobidev/simplefolio#readme",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.12.0",
-    "parcel": "^2.12.0",
-    "parcel-bundler": "^1.12.5",
-    "prettier": "^2.7.1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.2",
-    "jquery": "^3.6.1",
-    "popper.js": "^1.16.1",
-    "start": "^5.1.0",
-    "vanilla-tilt": "^1.7.3"
+    "next": "12.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.2",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.6"
   }
 }
