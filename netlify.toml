@@ -4,7 +4,7 @@
   cache = true
 
 [build.environment]
-  NODE_OPTIONS = "--max_old_space_size=4096"
+  NODE_OPTIONS = "--max_old_space_size=8192"
   NODE_VERSION = "18"
 
 [build.resources]

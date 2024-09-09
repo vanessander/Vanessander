@@ -6,7 +6,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "PARCEL_WORKERS=0 parcel",
-    "build": "NODE_OPTIONS=--max_old_space_size=4096 parcel build src/index.html --dist-dir ./dist",
+    "build": "parcel build src/index.html --dist-dir ./dist",
     "gh-pages-build": "PARCEL_WORKERS=0 parcel build --public-url ."
   },
   "repository": {
@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/cobidev/simplefolio#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
     "@parcel/transformer-sass": "^2.12.0",
     "parcel": "^2.12.0",
+    "parcel-bundler": "^1.12.5",
     "prettier": "^2.7.1"
   },
   "dependencies": {
