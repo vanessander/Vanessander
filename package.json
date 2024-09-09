@@ -6,7 +6,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "PARCEL_WORKERS=0 parcel",
-    "build": "parcel build src/index.html --dist-dir ./dist",
+    "build": "NODE_OPTIONS=--max_old_space_size=4096 parcel build src/index.html --dist-dir ./dist",
     "gh-pages-build": "PARCEL_WORKERS=0 parcel build --public-url ."
   },
   "repository": {
