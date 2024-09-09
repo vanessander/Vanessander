@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  cache = true
+
+[build.environment]
+  NODE_OPTIONS = "--max_old_space_size=4096"
+
+[build.resources]
+  cpu = 2
+  memory = 3072
+
+[build.environment]
+  NODE_VERSION = "18"
